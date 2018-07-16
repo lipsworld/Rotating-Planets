@@ -1,0 +1,213 @@
+$gravitation-constant: 6.673;
+$me: 0.38;
+$v: 0.723;
+$e: 1.0;
+$ma: 1.52;
+$j: 5.2;
+$s: 9.53;
+$u: 19.18;
+$n: 30.06;
+$p: 39.52;
+$animation: orbit;
+$sun-color: #f4d142;
+$mercury-color: #8e7920;
+$venus-color: #f2e9c1;
+$earth-color: #587c2e;
+$mars-color: #9e3f0c;
+$jupiter-color: #ba6b21;
+$jupiter-shadow: #56310e;
+$saturn-color: #efcc8b;
+$satern-ring-color: #fff0d6;
+$uranus-color: #6dcdd6;
+$neptune-color: #2b72a8;
+$pluto-color: #243882;
+@function orbit($a) {
+  @return $animation $gravitation-constant * $a + s linear infinite;
+}
+body {
+  background: rgb(11, 45, 94);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+}
+.sun {
+  background: $sun-color;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  top: 280px;
+  position: absolute;
+  box-shadow: 0px 0px 15px orange;
+}
+.mercuryOrbit {
+  width: 140px;
+  height: 140px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 310px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($me);
+}
+.mercury {
+  background: $mercury-color;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.venusOrbit {
+  width: 173px;
+  height: 173px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 294px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($v);
+}
+.venus {
+  background: $venus-color;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.earthOrbit {
+  width: 205px;
+  height: 205px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 279px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($e);
+}
+.earth {
+  background: $earth-color;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.marsOrbit {
+  width: 235px;
+  height: 235px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 265px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($ma);
+}
+.mars {
+  background: $mars-color;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.jupiterOrbit {
+  width: 330px;
+  height: 330px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 220px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($j);
+}
+.jupiter {
+  background: $jupiter-color;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.saturnOrbit {
+  width: 400px;
+  height: 400px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 185px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($s);
+}
+.saturn {
+  background: $saturn-color;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin: 20px;
+  border: 5px solid $satern-ring-color;
+/*  .saternRing {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(ellipse at center, 
+      transparent 60%, rgba(245,245,245,1) 25%,
+    rgb(117, 117, 117) 30%,
+    rgba(245,245,245,1) 30%,
+    rgba(245,245,245,1) 50%,
+    rgb(117, 117, 117) 100%
+    );
+  } */
+}
+.uranusOrbit {
+  width: 450px;
+  height: 450px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 160px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($u);
+}
+.uranus {
+  background: $uranus-color;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.neptuneOrbit {
+  width: 500px;
+  height: 500px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 145px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($n);
+}
+.neptune {
+  background: $neptune-color;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: 20px;
+}
+.plutoOrbit {
+  width: 525px;
+  height: 525px;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 132px;
+  border-radius: 100%;
+  margin: -50px auto;
+  animation: orbit($p);
+}
+.pluto {
+  background: $saturn-color;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin: 20px;
+}
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
